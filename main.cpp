@@ -536,3 +536,55 @@ void Menu :: verUsuarioAux()
   }
 
 }
+
+void Menu :: verUsuarioP()
+{
+  string auxCodigo;
+  ifstream mostrar;
+  bool encontrado=false;
+  mostrar.open("usuarios.txt",ios::in);
+  if(mostrar.is_open())
+  {
+    fflush(stdin);
+    cout<<"\t\t\t\t***Ver datos de un Usuario***\t\t\t\t\n\n";
+    cout<<"Ingresa el código del cliente que deseas consultar detalles: ";
+    getline(cin,auxCodigo);
+    getline(mostrar,usuario.codigo);
+    while(!mostrar.eof())
+    {
+      getline(mostrar,profesor.cursosEnseña);
+      getline(mostrar,profesor.sueldo);
+      getline(mostrar,profesor.perfilProf);
+      getline(mostrar,profesor.suplente);
+      
+
+
+      if(auxCodigo== usuario.codigo)
+        {
+          encontrado=true;
+          cout<<"\n\nRegistro Encontrado\n\n";
+          cout<<"Código: "<<usuario.codigo<<endl;
+          cout<<"Cursos que enseña: "<<usuario.nombres<<endl;
+          cout<<"Sueldo: "<<usuario.apellidos<<endl;
+          cout<<"Perfil Profesional: "<<usuario.direccion<<endl;
+          cout<<"Suplente: "<<usuario.correoInsti<<endl;
+          cout<<"DNI: "<<usuario.dni<<endl;
+          cout<<"Celular: "<<usuario.celular<<endl;
+          cout<<"Direccion: "<<usuario.direccion<<endl;
+          cout<<"Estado Civil: "<<usuario.estdCiv<<endl;
+          cout<<"\n\n";
+        }
+        getline(mostrar,usuario.codigo);
+    }
+    if(encontrado==false)
+    {
+      cout<<"\n\nNo se encontro el registro: "<<auxCodigo<<"\n\n";
+    }
+    else
+    {
+      error();
+    }
+
+    mostrar.close();
+  }
+}

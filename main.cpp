@@ -79,3 +79,25 @@ Usuario :: Usuario()
   estdCiv = " ";
 
 }
+
+class Admin :  Usuario
+{
+  public:
+  Admin(); 
+  
+  //void crearAdmin();
+  //void menuAdmin();
+  //void crearUsuario();
+  //void eliminarUsuario();
+  //void verUsuario();
+  //void modificarUsuario();
+
+  //friend class Alumno;
+  //friend class Profesor;
+
+};
+
+Admin :: Admin()
+{
+  Usuario(); 
+}

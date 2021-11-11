@@ -887,3 +887,10 @@ void Menu :: menuPrincipal()
   }
   while(opc != 4 );
 }
+
+int main()
+{
+  Menu inicio;
+  inicio.menuPrincipal();
+  return 0; 
+}

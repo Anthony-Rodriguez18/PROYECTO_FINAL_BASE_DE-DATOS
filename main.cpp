@@ -77,3 +77,35 @@ Profesor :: Profesor()
   perfilProf = " ";
   suplente = " ";
 }
+class Alumno : Usuario 
+{
+  public: 
+  string carrera;
+  string cursos; 
+  string periodoIngreso;
+  int semestre;
+  int creditosSemestre;
+  int creditosAcumulados;
+  double notas;
+  float mensualidad; 
+
+  Alumno();
+  void crearAlumno();
+  //void menuAlumno();
+  //void modificarDatosA();
+  //void mostrarDatosA();
+
+  friend class Admin;
+  friend class Profesor;
+};
+Alumno :: Alumno()
+{
+  carrera = " ";
+  cursos = " ";
+  periodoIngreso = " ";
+  semestre = 0;
+  creditosSemestre = 0;
+  creditosAcumulados = 0;
+  notas = 0;
+  mensualidad = 0;
+} 

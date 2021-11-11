@@ -843,3 +843,47 @@ void Menu :: menuAlumno()
   }
   while(opc != 4 );
 }
+
+void Menu :: menuPrincipal()
+{
+  int opc;
+  do
+  {
+    cout << "\t\t***Universidad las chicas superpoderosas***\t\t"<<endl;
+    cout << "[1] Administrador" << endl;
+    cout << "[2] Profesor" << endl;
+    cout << "[3] Alumno" << endl;
+    cout << "[4] Salir" << endl;
+    cout << "Elija una opción..." << endl;
+    cin >> opc;
+    std::cout << "\033[H\033[2J\033[3J";
+    switch  (opc)
+		{
+      case 1:
+      {
+        menuAdmin();
+        break;
+      }
+      case 2:
+      {
+        menuProf();
+        break;
+      }
+      case 3:
+      {
+        menuAlumno();
+        break;
+      }
+      case 4:
+      {
+        break;
+      }
+      default:
+      {
+        cout << "Opción no válida" << endl;
+        break;
+      }
+    }
+  }
+  while(opc != 4 );
+}

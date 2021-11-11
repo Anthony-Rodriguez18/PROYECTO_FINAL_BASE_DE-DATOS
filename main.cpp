@@ -109,3 +109,50 @@ Alumno :: Alumno()
   notas = 0;
   mensualidad = 0;
 } 
+
+class Menu
+{
+  public:
+  Menu();
+  class Usuario usuario; 
+  class Admin admin; 
+  class Profesor profesor; 
+  class Alumno alumno; 
+
+  void menuPrincipal();
+  void crearAdmin();
+  void crearProf();
+  void crearAlumno();
+  
+  //USUARIO
+  void crearUsuarioAux(); 
+  void verUsuarioAux();
+
+  //ADMIN
+  void menuAdmin();
+  void crearUsuario();
+  void eliminarUsuario();
+  void verUsuario();
+  void verUsuarioAd();
+  void modificarUsuario();
+
+  //PROF
+  void menuProf();
+  void modificarNotas();
+  void modificarDatosP();
+  void mostrarDatosP();
+  void verUsuarioP();
+
+  //ALUMNO
+  void menuAlumno();
+  void modificarDatosA();
+  void mostrarDatosA();
+  void verUsuarioA();
+};
+
+Menu :: Menu()
+{
+  Usuario();
+  Profesor();
+  Alumno();
+}

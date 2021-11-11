@@ -799,3 +799,47 @@ void Menu :: menuProf()
   }
   while(opc != 5 );
 }
+void Menu :: menuAlumno()
+{
+  int opc;
+  do
+  {
+    cout << "\t\t***ALUMNO***\t\t"<<endl;
+    cout << "[1] Modificar datos personales" << endl;
+    cout << "[2] Mostrar Datos" << endl;
+    cout << "[3] Mostrar Usuario" << endl;
+    cout << "[4] Salir" << endl;
+    cout << "Elija una opción..." << endl;
+    cin >> opc;
+    std::cout << "\033[H\033[2J\033[3J";
+    switch (opc)
+		{
+      case 1:
+      {
+        //modificarDatosPer();
+        break;
+      }
+      case 2:
+      {
+        //mostrarAlumno();
+        break;
+      }
+      case 3:
+      {
+        //mostrarUsuario();
+        break;
+      }
+      case 4:
+      {
+        break;
+      }
+      default:
+      {
+        cout << "Opción no válida" << endl;
+
+        break;
+      }
+    }
+  }
+  while(opc != 4 );
+}

@@ -32,38 +32,6 @@ class Usuario
 	string estdCiv;
 
   Usuario();
-  //void crearUsuarioAux();
-
-  /*//menu admin, menu prof,  menu alumno
-  void menuPrincipal();
-  //Crear usuario, modificar usuario, mostrar datos, eliminar usuario
-  void menuAdmin();  
-  //modificar datos personales, modificar notas, ver usuario mostrar datos personales,
-  void menuProfesor();
-  //Modificar datos personales, mostrar datos personales, ver usuario 
-  void menuAlumno();*/
-
-  //Admin
-  
-  //void crearProfesor();
-  //void crearAlumno();
-  //void crearAdmin();  
-  //void modificarUsuario();
-  //void mostrarUsuarioComp(); 
-  //void eliminarUsuario();
-  
-  //Profesor 
-  //void modificarNotas();  
-  //void mostrarProfesor();
-
-  //Alumno 
-  //void mostrarAlumno();  
-
-  //Alumno y prof
-  
-  //void modificarDatosPer();
-  //void mostrarUsuario();
-
 };
 
 Usuario :: Usuario()
@@ -84,20 +52,28 @@ class Admin :  Usuario
 {
   public:
   Admin(); 
-  
-  //void crearAdmin();
-  //void menuAdmin();
-  //void crearUsuario();
-  //void eliminarUsuario();
-  //void verUsuario();
-  //void modificarUsuario();
-
-  //friend class Alumno;
-  //friend class Profesor;
 
 };
 
 Admin :: Admin()
 {
   Usuario(); 
+}
+
+class Profesor : Usuario
+{
+  public: 
+  string	cursosEnseña;
+	string	sueldo;
+	string	perfilProf;
+	string	suplente;
+  Profesor();
+
+};
+Profesor :: Profesor()
+{
+  cursosEnseña = " ";
+  sueldo = " ";
+  perfilProf = " ";
+  suplente = " ";
 }

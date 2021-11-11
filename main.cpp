@@ -641,3 +641,111 @@ void Menu :: verUsuarioA()
     mostrar.close();
   }
 }
+
+void Menu :: verUsuarioAd()
+{
+  string auxCodigo;
+  ifstream mostrar;
+  bool encontrado=false;
+  mostrar.open("usuarios.txt",ios::in);
+  if(mostrar.is_open())
+  {
+    fflush(stdin);
+    cout<<"\t\t\t\t***Ver datos de un Usuario***\t\t\t\t\n\n";
+    cout<<"Ingresa el código del cliente que deseas consultar detalles: ";
+    getline(cin,auxCodigo);
+    getline(mostrar,usuario.codigo);
+    while(!mostrar.eof())
+    {
+      getline(mostrar,usuario.contraseña);
+      getline(mostrar,usuario.nombres);
+      getline(mostrar,usuario.apellidos);
+      getline(mostrar,usuario.dni);
+      getline(mostrar,usuario.correoInsti);
+      getline(mostrar,usuario.celular);
+      getline(mostrar,usuario.direccion);
+      getline(mostrar,usuario.estdCiv);
+
+      if(auxCodigo== usuario.codigo)
+        {
+          encontrado=true;
+          cout<<"\n\nRegistro Encontrado\n\n";
+          cout<<"Código: "<<usuario.codigo<<endl;
+          cout<<"Nombres: "<<usuario.nombres<<endl;
+          cout<<"Apellidos: "<<usuario.apellidos<<endl;
+          cout<<"DNI: "<<usuario.direccion<<endl;
+          cout<<"Correo Institucional: "<<usuario.correoInsti<<endl;
+          cout<<"DNI: "<<usuario.dni<<endl;
+          cout<<"Celular: "<<usuario.celular<<endl;
+          cout<<"Direccion: "<<usuario.direccion<<endl;
+          cout<<"Estado Civil: "<<usuario.estdCiv<<endl;
+          cout<<"\n\n";
+        }
+        getline(mostrar,usuario.codigo);
+    }
+    if(encontrado==false)
+    {
+      cout<<"\n\nNo se encontro el registro: "<<auxCodigo<<"\n\n";
+    }
+    else
+    {
+      error();
+    }
+
+    mostrar.close();
+  }
+}
+
+void Menu :: verUsuario()
+{
+
+}
+void Menu :: menuAdmin()
+{
+  int op;
+  do
+  {
+    cout << "\t\t***ADMINISTRADOR***\t\t"<<endl;
+    cout << "[1] Crear Usuario" << endl;
+    cout << "[2] Modificar Usuario" << endl;
+    cout << "[3] Mostrar Datos de Usuario" << endl;
+    cout << "[4] Eliminar Usuario" << endl;
+    cout << "[5] Salir" << endl;
+    cout << "Elija una opción..." << endl;
+    cin >> op;
+    std::cout << "\033[H\033[2J\033[3J";
+    switch (op)
+		{
+		case 1:
+		{
+      crearUsuario();
+      break;
+		}
+		case 2:
+		{
+			verUsuario();
+			break;
+		}
+		case 3:
+		{
+			//mostrarUsuarioComp();
+			break;
+		}
+		case 4:
+		{
+      //eliminarUsuario();
+			break;
+		}
+    case 5:
+    {
+      break;
+    }
+		default:
+		{
+			cout << "Opción no válida" << endl;
+			break;
+		}
+    }
+  }
+  while(op != 5 );
+}

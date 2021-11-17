@@ -1,22 +1,16 @@
 #include "../include/basic.h"
 
-int Menu::getMainOption()
-{
-    int type_;
-    std::cout << "\t\t***Universidad las chicas superpoderosas***\t\t" << std::endl;
-    std::cout << "[1] Administrador" << std::endl;
-    std::cout << "[2] Profesor" << std::endl;
-    std::cout << "[3] Alumno" << std::endl;
-    std::cout << "[4] Salir" << std::endl;
-    std::cout << "Elija una opción..." << std::endl;
-    std::cin >> type_;
-
-    return type_;
-};
-
 void Menu::init()
 {
-    User *const user = this->login("maria123", "jadfsdf");
+    std::string username;
+    std::string password;
+
+    std::cout << "Username: ";
+    std::cin >> username;
+    std::cout << "Password: ";
+    std::cin >> password;
+
+    User *const user = this->login(username, password);
 
     this->loadPermissions(user->getID());
     // Role *const role = new Role();

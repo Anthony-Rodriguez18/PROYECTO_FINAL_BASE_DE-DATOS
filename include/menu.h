@@ -11,7 +11,6 @@ class Menu
     User *login(std::string, std::string);
     void loadPermissions(int);
 
-    int getMainOption();
     std::string actionSelection();
     bool createAdmin();
     bool createTeacher();

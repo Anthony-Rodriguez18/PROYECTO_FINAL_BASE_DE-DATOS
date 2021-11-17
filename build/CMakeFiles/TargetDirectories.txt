@@ -1,3 +1,0 @@
-/home/dev/Projects/others/ariana/database/build/CMakeFiles/rebuild_cache.dir
-/home/dev/Projects/others/ariana/database/build/CMakeFiles/edit_cache.dir
-/home/dev/Projects/others/ariana/database/build/CMakeFiles/program.dir

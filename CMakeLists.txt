@@ -12,11 +12,17 @@ set (SOURCE_FILES
     src/main.cpp
     src/menu.cpp
     src/user.cpp
+    src/role.cpp
+    src/permission_user.cpp
+    src/permission.cpp
 )
 
 set (HEADER_FILES
     include/menu.h
     include/user.h
+    include/role.h
+    include/permission_user.h
+    include/permission.h
 )
 
 file(GLOB DATABASE_FILES

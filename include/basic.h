@@ -1,15 +1,18 @@
 #ifndef BASIC_H_
 #define BASIC_H_
 
+#define DELIMITER "|"
+
 #include <iostream>
 #include <fstream>
 #include <sstream>
 #include <filesystem>
 #include <list>
 #include <string>
+#include <cstdlib>
 
-#include "menu.h"
 #include "user.h"
+#include "menu.h"
 #include "role.h"
 #include "permission.h"
 #include "permission_user.h"

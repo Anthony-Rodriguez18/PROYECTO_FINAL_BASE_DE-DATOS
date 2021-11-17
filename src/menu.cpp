@@ -14,12 +14,32 @@ int Menu::getMainOption()
     return type_;
 };
 
-void Menu::setUserType(MenuState type_)
+void Menu::init()
 {
-    this->userType = type_;
+    User *const user = this->login("maria123", "jadfsdf");
+
+    this->loadPermissions(user->getID());
+    // Role *const role = new Role();
+    // role->getById(user->getRoleId())->getID()
+
+    switch (user->getRoleId())
+    {
+    case RoleType::ADMINISTRATOR:
+        std::cout << "Administrator" << std::endl;
+        break;
+    case RoleType::TEACHER:
+        std::cout << "Teacher" << std::endl;
+        break;
+    case RoleType::STUDENT:
+        std::cout << "Student" << std::endl;
+        break;
+
+    default:
+        break;
+    }
 }
 
-int Menu::login(std::string username_, std::string password_)
+User *Menu::login(std::string username_, std::string password_)
 {
     User *const user = new User();
     std::list<User *> users = user->getAll();
@@ -27,41 +47,23 @@ int Menu::login(std::string username_, std::string password_)
     for (const auto &item : users)
     {
         if (item->getUsername() == username_ && item->getPassword() == password_)
-            return item->getRoleId();
+            return item;
     }
-    return 0;
+    return nullptr;
 }
 
-void Menu::init()
+void Menu::loadPermissions(int value_)
 {
-    int roleId = this->login("maria123", "jadfsdf");
+    PermissionUser *const permissionUser = new PermissionUser();
+    std::list<PermissionUser *> filterPermissionUser = permissionUser->getAllByUser(value_);
 
-    Role *const role = new Role();
-    role->getById(roleId);
+    Permission *const permission = new Permission();
+    std::list<int> permissions;
 
-    std::cout << role << std::endl;
-
-    // int type_ = MenuState::UNKNOWNK;
-
-    // do
-    // {
-    //     type_ = this->getMainOption();
-
-    //     switch (type_)
-    //     {
-    //     case MenuState::ADMINISTRATOR:
-    //         std::cout << "Administrator" << std::endl;
-    //         break;
-    //     case MenuState::TEACHER:
-    //         std::cout << "Teacher" << std::endl;
-    //         break;
-    //     case MenuState::STUDENT:
-    //         std::cout << "Student" << std::endl;
-    //         break;
-
-    //     default:
-    //         break;
-    //     }
-
-    // } while (type_ != MenuState::END);
+    for (const auto &item : filterPermissionUser)
+    {
+        int permissionId = permission->getById(item->getPermissionId())->getID();
+        permissions.push_front(permissionId);
+    }
+    this->setPermissions(permissions);
 }

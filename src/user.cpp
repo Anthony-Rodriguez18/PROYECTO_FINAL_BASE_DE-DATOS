@@ -7,7 +7,7 @@ User::User()
 
 std::list<User *> User::getAll()
 {
-    std::string delimiter = "|";
+    std::string delimiter = DELIMITER;
     std::ifstream file("users.txt");
     std::string line;
 
@@ -31,19 +31,16 @@ std::list<User *> User::getAll()
         properties[index_properties] = line;
 
         User *const user = new User();
-        // user->setID(std::stoi(properties[0]));
-        // user->setDNI(std::stol(properties[1]));
-        // user->setPhone(std::stol(properties[2]));
-        // user->setFirstName(properties[3]);
-        // user->setLastName(properties[4]);
-        // user->setEmail(properties[5]);
-        // user->setAddress(properties[6]);
+        user->setID(std::stoi(properties[0]));
+        user->setDNI(std::stol(properties[1]));
+        user->setPhone(std::stol(properties[2]));
+        user->setFirstName(properties[3]);
+        user->setLastName(properties[4]);
+        user->setEmail(properties[5]);
+        user->setAddress(properties[6]);
         user->setUsername(properties[7]);
         user->setPassword(properties[8]);
-        user->setRoleId(
-            // std::stoi(properties[10])
-            1
-        );
+        user->setRoleId(std::stoi(properties[9]));
 
         users.push_front(user);
     }

@@ -1,15 +1,15 @@
 #include "../include/basic.h"
 
-Role::Role()
+Permission::Permission()
 {
     ;
 }
 
-Role *Role::getById(int value_)
+Permission *Permission::getById(int value_)
 {
-    std::list<Role *> roles = this->getAll();
+    std::list<Permission *> permissions = this->getAll();
 
-    for (const auto &item : roles)
+    for (const auto &item : permissions)
     {
         if (item->getID() == value_)
             return item;
@@ -17,15 +17,15 @@ Role *Role::getById(int value_)
     return nullptr;
 }
 
-std::list<Role *> Role::getAll()
+std::list<Permission *> Permission::getAll()
 {
     std::string delimiter = DELIMITER;
-    std::ifstream file("roles.txt");
+    std::ifstream file("permissions.txt");
     std::string line;
 
-    std::string properties[NUMBER_ROLE_PROPERTIES];
+    std::string properties[NUMBER_PERMISSION_PROPERTIES];
 
-    std::list<Role *> roles;
+    std::list<Permission *> permissions;
 
     while (std::getline(file, line))
     {
@@ -42,12 +42,12 @@ std::list<Role *> Role::getAll()
         }
         properties[index_properties] = line;
 
-        Role *const role = new Role();
-        role->setID(std::stoi(properties[0]));
-        role->setName(properties[1]);
-        role->setDescription(properties[2]);
+        Permission *const permission = new Permission();
+        permission->setID(std::stoi(properties[0]));
+        permission->setName(properties[1]);
+        permission->setDescription(properties[2]);
 
-        roles.push_front(role);
+        permissions.push_front(permission);
     }
-    return roles;
+    return permissions;
 }

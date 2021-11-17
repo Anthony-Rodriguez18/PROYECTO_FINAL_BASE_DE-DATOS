@@ -1,6 +1,8 @@
 #ifndef PERMISSION_USER_H_
 #define PERMISSION_USER_H_
 
+#define NUMBER_PERMISSION_USER_PROPERTIES 3
+
 class PermissionUser
 {
   protected:
@@ -9,21 +11,36 @@ class PermissionUser
     int userId;
 
   public:
-    void setID(int);
-    void setPermissionId(int);
-    void setUserId(int);
+    PermissionUser();
+    ~PermissionUser();
+
+    std::list<PermissionUser *> getAll();
+    std::list<PermissionUser *> getAllByUser(int);
+
+    void setID(int value_)
+    {
+        this->ID = value_;
+    }
+    void setPermissionId(int value_)
+    {
+        this->permissionId = value_;
+    }
+    void setUserId(int value_)
+    {
+        this->userId = value_;
+    }
 
     int getID()
     {
-        this->ID;
+        return this->ID;
     }
     int getPermissionId()
     {
-        this->permissionId;
+        return this->permissionId;
     }
     int getUserId()
     {
-        this->userId;
+        return this->userId;
     }
 };
 

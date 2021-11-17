@@ -1,6 +1,15 @@
 #ifndef ROLE_H_
 #define ROLE_H_
 
+#define NUMBER_ROLE_PROPERTIES 3
+
+enum RoleType
+{
+    ADMINISTRATOR = 1,
+    TEACHER = 2,
+    STUDENT = 3
+};
+
 class Role
 {
   protected:
@@ -13,6 +22,7 @@ class Role
     ~Role();
 
     Role *getById(int);
+    std::list<Role *> getAll();
 
     void setID(int value_)
     {

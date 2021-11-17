@@ -5,6 +5,7 @@
 #include <fstream>
 #include <sstream>
 #include <filesystem>
+#include <list>
 #include <string>
 
 #include "menu.h"
@@ -15,7 +16,6 @@
 #include "admin.h"
 #include "teacher.h"
 #include "student.h"
-#include "database.h"
 
 class Menu;
 class User;
@@ -25,6 +25,5 @@ class PermissionUser;
 class Admin;
 class Teacher;
 class Student;
-class Database;
 
 #endif

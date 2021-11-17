@@ -9,21 +9,35 @@ class Role
     std::string description;
 
   public:
-    void setID(int);
-    void setName(std::string);
-    void setDescription(std::string);
+    Role();
+    ~Role();
+
+    Role *getById(int);
+
+    void setID(int value_)
+    {
+        this->ID = value_;
+    }
+    void setName(std::string value_)
+    {
+        this->name = value_;
+    }
+    void setDescription(std::string value_)
+    {
+        this->description = value_;
+    }
 
     int getID()
     {
-        this->ID;
+        return this->ID;
     }
     std::string getName()
     {
-        this->name;
+        return this->name;
     }
     std::string getDescription()
     {
-        this->description;
+        return this->description;
     }
 };
 

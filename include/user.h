@@ -3,7 +3,7 @@
 
 #define NUMBER_USER_PROPERTIES 10
 
-class User: public Database
+class User
 {
   protected:
     int ID;
@@ -22,61 +22,90 @@ class User: public Database
     User();
     ~User();
 
-    void setID(int);
-    void setDNI(long);
-    void setPhone(long);
-    void setFirstName(std::string);
-    void setLastName(std::string);
-    void setEmail(std::string);
-    void setAddress(std::string);
+    User *getById();
+    std::list<User *> getAll();
 
-    void setUsername(std::string);
-    void setPassword(std::string);
-    void setRoleId(int);
+    void setID(int value_)
+    {
+        this->ID = value_;
+    }
+    void setDNI(long value_)
+    {
+        this->DNI = value_;
+    }
+    void setPhone(long value_)
+    {
+        this->phone = value_;
+    }
+    void setFirstName(std::string value_)
+    {
+        this->firstName = value_;
+    }
+    void setLastName(std::string value_)
+    {
+        this->lastName = value_;
+    }
+    void setEmail(std::string value_)
+    {
+        this->email = value_;
+    }
+    void setAddress(std::string value_)
+    {
+        this->address = value_;
+    }
+    void setUsername(std::string value_)
+    {
+        this->username = value_;
+    }
+    void setPassword(std::string value_)
+    {
+        this->password = value_;
+    }
+    void setRoleId(int value_)
+    {
+        this->roleId = value_;
+    }
 
     int getID()
     {
-        this->ID;
+        return this->ID;
     }
     long getDNI()
     {
-        this->DNI;
+        return this->DNI;
     }
     long getPhone()
     {
-        this->phone;
+        return this->phone;
     }
     std::string getFirstName()
     {
-        this->firstName;
+        return this->firstName;
     }
     std::string getLastName()
     {
-        this->lastName;
+        return this->lastName;
     }
     std::string getEmail()
     {
-        this->email;
+        return this->email;
     }
     std::string getAddress()
     {
-        this->address;
+        return this->address;
     }
-
     std::string getUsername()
     {
-        this->username;
+        return this->username;
     }
     std::string getPassword()
     {
-        this->password;
+        return this->password;
     }
     int getRoleId()
     {
-        this->roleId;
+        return this->roleId;
     }
-
-    void getByAuth(std::string, std::string);
 };
 
 #endif

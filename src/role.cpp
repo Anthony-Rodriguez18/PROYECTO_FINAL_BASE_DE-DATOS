@@ -1,11 +1,11 @@
 #include "../include/basic.h"
 
-User::User()
+Role::Role()
 {
     ;
 }
 
-std::list<User *> User::getAll()
+Role *Role::getById(int value_)
 {
     std::string delimiter = "|";
     std::ifstream file("users.txt");
@@ -13,7 +13,7 @@ std::list<User *> User::getAll()
 
     std::string properties[NUMBER_USER_PROPERTIES];
 
-    std::list<User *> users;
+    Role *const role = new Role();
 
     while (std::getline(file, line))
     {
@@ -30,22 +30,15 @@ std::list<User *> User::getAll()
         }
         properties[index_properties] = line;
 
-        User *const user = new User();
-        // user->setID(std::stoi(properties[0]));
-        // user->setDNI(std::stol(properties[1]));
-        // user->setPhone(std::stol(properties[2]));
-        // user->setFirstName(properties[3]);
-        // user->setLastName(properties[4]);
-        // user->setEmail(properties[5]);
-        // user->setAddress(properties[6]);
-        user->setUsername(properties[7]);
-        user->setPassword(properties[8]);
-        user->setRoleId(
-            // std::stoi(properties[10])
+        role->setID(
+            // properties[0]
             1
         );
+        role->setName(properties[1]);
+        role->setDescription(properties[2]);
 
-        users.push_front(user);
+        if (role->ID == value_)
+            return role;
     }
-    return users;
+    return nullptr;
 }

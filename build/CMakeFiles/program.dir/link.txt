@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++14 -O3 -Wall   CMakeFiles/program.dir/src/main.cpp.o CMakeFiles/program.dir/src/menu.cpp.o CMakeFiles/program.dir/src/user.cpp.o  -o program 

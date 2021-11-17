@@ -22,15 +22,24 @@ void Menu::setUserType(MenuState type_)
 int Menu::login(std::string username_, std::string password_)
 {
     User *const user = new User();
-    user->getByAuth(username_, password_);
+    std::list<User *> users = user->getAll();
 
+    for (const auto &item : users)
+    {
+        if (item->getUsername() == username_ && item->getPassword() == password_)
+            return item->getRoleId();
+    }
     return 0;
 }
 
-
 void Menu::init()
 {
-    this->login("maria123", "jadfsdf");
+    int roleId = this->login("maria123", "jadfsdf");
+
+    Role *const role = new Role();
+    role->getById(roleId);
+
+    std::cout << role << std::endl;
 
     // int type_ = MenuState::UNKNOWNK;
 
@@ -55,5 +64,4 @@ void Menu::init()
     //     }
 
     // } while (type_ != MenuState::END);
-    
 }

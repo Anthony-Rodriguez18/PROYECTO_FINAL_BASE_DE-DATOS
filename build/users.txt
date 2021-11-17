@@ -1,0 +1,3 @@
+1|36263514|956235624|Josue|Ugarte Perez|josue.ugarte@ucsp.edu.pe|Av. Siempre viva|josue123|jseee|1
+2|46263514|954535624|Maria|Perez Alvela|maria.perez@ucsp.edu.pe|Av. Ugarte|maria123|jadfsdf|2
+3|56263514|954635624|Rodrigo|Bolivar Tsk|rodrigo.bolivar@ucsp.edu.pe|Av. Ejercito|rodrigo123|pipipi|3

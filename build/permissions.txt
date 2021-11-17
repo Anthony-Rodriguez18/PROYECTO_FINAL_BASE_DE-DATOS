@@ -1,0 +1,4 @@
+1|INSERT|permiso para agregar
+2|UPDATE|permiso para modificar
+3|DELETE|permiso para eliminar
+4|READ|Permiso para leer

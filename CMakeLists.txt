@@ -17,7 +17,6 @@ set (SOURCE_FILES
 set (HEADER_FILES
     include/menu.h
     include/user.h
-    include/database.h
 )
 
 file(GLOB DATABASE_FILES
